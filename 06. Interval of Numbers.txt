@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+          var  c = Math.Min(a, b);
+           var d = Math.Max(a, b);
+            for(var i = c; i<=d; i++)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+}

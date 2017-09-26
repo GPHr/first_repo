@@ -1,0 +1,80 @@
+using System;
+
+namespace Application
+{
+  class MainClass
+  {
+    public static void Main(string[] args)
+    {
+        string  month = Console.ReadLine();
+        int night = int.Parse(Console.ReadLine());
+        var studioDiscount = 1.0;
+        var doubleDiscount = 1.0;
+        var suiteDiscount = 1.0;
+        var Studio = 0;
+        var Double = 0;
+        var Suite = 0;
+        int sNight = night;
+
+      switch (month)
+        {
+        case "May":
+        case "October":
+          Studio = 50;
+          Double = 65;
+          Suite = 75;
+          break;
+            case "June":
+            case "September":
+              Studio = 60;
+              Double = 72;
+              Suite = 82;
+              break;
+            case "July":
+            case "August":
+            case "December":
+              Studio = 68;
+              Double = 77;
+              Suite = 89;
+              break;
+        }
+        if(night>7 )
+          {
+          if (month == "May" || month == "October")
+            {
+              studioDiscount = 0.95;
+            }
+          }
+        if(night > 14)
+          {
+            if( month =="June"|| month =="September")
+              {
+               doubleDiscount = 0.90;
+              }
+          }
+        if(night>14)
+          {
+          if (month == "July" || month == "August" || month == "December")
+            {
+              suiteDiscount = 0.85;
+            }
+          }
+        if(night>7)
+          {
+          if (month == "September" || month == "October")
+            {
+              sNight = night - 1;
+            }
+          }
+
+        var sprice = sNight * Studio * studioDiscount;
+        var dprice = night * Double * doubleDiscount;
+        var suprice = night * Suite * suiteDiscount;
+
+        Console.WriteLine($"Studio: {sprice:F2} lv.");
+        Console.WriteLine($"Double: {dprice:F2} lv.");
+        Console.WriteLine($"Suite: {suprice:F2} lv.");
+          
+    }
+  }
+}
